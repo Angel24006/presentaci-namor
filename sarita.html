@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Para Sarita 💖</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    background: linear-gradient(to bottom, #ffe6f0, #ffffff);
+    text-align:center;
+    font-family:'Playfair Display', serif;
+}
+
+#inicio{
+    margin-top:150px;
+}
+
+h1{
+    font-size:42px;
+    color:#b30059;
+}
+
+button{
+    padding:12px 28px;
+    font-size:18px;
+    border:none;
+    border-radius:30px;
+    cursor:pointer;
+    margin:20px;
+    transition:0.3s;
+}
+
+#si{
+    background-color:#ff4d88;
+    color:white;
+}
+
+#si:hover{
+    background-color:#e6005c;
+}
+
+#no{
+    background-color:#999;
+    color:white;
+    position:absolute;
+}
+
+#carta{
+    display:none;
+    padding:60px;
+    max-width:800px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+    color:#660033;
+}
+
+.decoracion{
+    font-size:28px;
+    animation:latido 1s infinite alternate;
+}
+
+@keyframes latido{
+    from{transform:scale(1);}
+    to{transform:scale(1.1);}
+}
+
+#corazonBtn{
+    margin-top:40px;
+    background:#ff1a75;
+    color:white;
+    font-family:'Dancing Script', cursive;
+    font-size:26px;
+}
+
+#segundaParte{
+    display:none;
+    margin-top:40px;
+    padding:40px;
+    background:#fff0f5;
+    border-radius:20px;
+    box-shadow:0 0 25px rgba(255,0,102,0.2);
+    font-family:'Dancing Script', cursive;
+    font-size:30px;
+    color:#cc0066;
+}
+</style>
+</head>
+
+<body>
+
+<div id="inicio">
+<h1>¿Quieres abrir este archivo? 💌</h1>
+<button id="si" onclick="abrirCarta()">Sí</button>
+<button id="no" onclick="moverNo()">No</button>
+</div>
+
+<!-- AHORA LA MÚSICA LOCAL -->
+<audio id="musica" src="musica.mp3"></audio>
+
+<div id="carta">
+
+<div class="decoracion">💖 ✨ 💖</div>
+
+<p><strong>Hola, Sarita:</strong></p>
+
+<p>
+Quería comenzar diciéndote que realmente te quiero mucho.
+Cada día que pasa me enamoro más de ti.
+Quizás no hemos tenido aún una conversación profunda y duradera,
+pero lo poco que hemos hablado me basta y me sobra para saber lo enamorado que estoy.
+</p>
+
+<p>
+Gracias a eso conozco mis verdaderos sentimientos hacia ti.
+Agradezco que aceptaras ser mi San Valentín, y esta es una pequeña prueba de ello.
+</p>
+
+<p>Y si algo estoy seguro, Sarita…</p>
+
+<p style="font-size:26px; font-weight:bold;">
+Quiero ir contigo donde nadie pueda ir.
+</p>
+
+<p style="margin-top:40px;">
+Con cariño,<br>
+<strong>Ángel 💕</strong>
+</p>
+
+<button id="corazonBtn" onclick="mostrarSegunda()">Presiona aquí ❤️</button>
+
+<div id="segundaParte">
+💞 Sarita 💞  
+<br><br>
+¿Quieres seguir escribiendo esta historia conmigo? ✨  
+<br><br>
+🌹
+</div>
+
+</div>
+
+<script>
+
+function moverNo(){
+    var boton=document.getElementById("no");
+    boton.style.position="absolute";
+    boton.style.top=Math.random()*70+"%";
+    boton.style.left=Math.random()*70+"%";
+}
+
+function abrirCarta(){
+    document.getElementById("inicio").style.display="none";
+    document.getElementById("carta").style.display="block";
+    document.getElementById("musica").play();
+}
+
+function mostrarSegunda(){
+    document.getElementById("segundaParte").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
